@@ -1,6 +1,5 @@
 package ch3;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,9 +13,7 @@ public class after {
     // 단어가 기존 리스트에 있는지 확인
     // after.hasWord(word);
     public boolean hasWord(String word) {
-        if (words.stream().filter(w -> w.equalsIgnoreCase(word)).count() > 0)
-            return true;
-        else return false;
+        return words.stream().anyMatch(w -> w.equalsIgnoreCase(word));
     }
 
     // 단어 추가만

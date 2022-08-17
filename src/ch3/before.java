@@ -15,7 +15,7 @@ public class before {
     // 명령과 조회가 동시에
     // 중복
     public boolean addWordAndPrint(String word) {
-        if (words.stream().filter(w -> w.equalsIgnoreCase(word)).count() == 0) {
+        if (words.stream().anyMatch(w -> w.equalsIgnoreCase(word))) {
             words.add(word.toLowerCase());
             print();
             return true;
@@ -30,15 +30,15 @@ public class before {
     // 중복
     public void words(String w1, String w2, String w3) {
         if (!"".equals(w1))
-            if (words.stream().filter(w -> w.equalsIgnoreCase(w1)).count() == 0)
+            if (words.stream().anyMatch(w -> w.equalsIgnoreCase(w1)))
                 words.add(w1.toLowerCase());
 
         if (!"".equals(w2))
-            if (words.stream().filter(w -> w.equalsIgnoreCase(w2)).count() == 0)
+            if (words.stream().anyMatch(w -> w.equalsIgnoreCase(w2)))
                 words.add(w2.toLowerCase());
 
         if (!"".equals(w3))
-            if (words.stream().filter(w -> w.equalsIgnoreCase(w3)).count() == 0)
+            if (words.stream().anyMatch(w -> w.equalsIgnoreCase(w3)))
                 words.add(w3.toLowerCase());
     }
 }
